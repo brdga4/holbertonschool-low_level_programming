@@ -1,0 +1,23 @@
+{
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Compile C file",
+				"type": "shell",
+				"command": "gcc",
+				"args": [
+					"-Wall",
+					"-Werror",
+					"-Wextra",
+					"-pedantic",
+					"-std=gnu89",
+					"${file}",
+					"-o",
+					"${fileDirname}/${fileBasenameNoExtension}"
+				],
+				"group": "build",
+				"problemMatcher": ["$gcc"],
+				"detail": "Compile C file with ALX flags"
+			}
+		]
+}
