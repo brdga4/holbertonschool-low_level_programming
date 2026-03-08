@@ -30,6 +30,7 @@ char *_strstr(char *haystack, char *needle)
 			{
 				break;
 			}
+			from--;
 		}
 		if (haystack[start] == '\0' && needle[i] == '\0')
 		{
@@ -37,7 +38,7 @@ char *_strstr(char *haystack, char *needle)
 		}
 		if (needle[i] == '\0')
 		{
-			return (&haystack[start - from]);
+			return (&haystack[start] - from);
 		}
 		start++;
 	}
