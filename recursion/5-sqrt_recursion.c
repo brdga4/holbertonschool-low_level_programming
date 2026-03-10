@@ -3,32 +3,29 @@
 /**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: the number
- * Return: the natural square root of a number, or -1
+ * Return: the natural square root, or -1 if none
  */
 int _sqrt_recursion(int n)
 {
-	static int guess;
-	int result;
+	return (_sqrt_try(n, 0));
+}
 
+/**
+ * _sqrt_try - helper recursion to find sqrt
+ * @n: the number
+ * @guess: candidate square root
+ * Return: square root if exists, -1 if none
+ */
+int _sqrt_try(int n, int guess)
+{
 	if (n < 0)
-	{
-		guess = 0;
 		return (-1);
-	}
 
 	if (guess * guess == n)
-	{
-		result = guess;
-		guess = 0;
-		return (result);
-	}
+		return (guess);
 
 	if (guess * guess > n)
-	{
-		guess = 0;
 		return (-1);
-	}
 
-	guess++;
-	return (_sqrt_recursion(n));
+	return (_sqrt_try(n, guess + 1));
 }
