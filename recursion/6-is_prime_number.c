@@ -27,7 +27,7 @@ int is_prime_try(int n, int x)
 	{
 		return (0);
 	}
-	if (x > _sqrt_recursion(n))
+	if (x * x > n)
 	{
 		return (1);
 	}
