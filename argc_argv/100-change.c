@@ -12,7 +12,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int num = atoi(argv[1]);
+	int num;
 	int i = 0;
 	int coins = 0;
 	int arr[] = {25, 10, 5, 2, 1};
@@ -22,6 +22,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+
+	num = atoi(argv[1]);
 
 	if (num < 0)
 	{
